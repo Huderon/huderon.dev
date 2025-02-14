@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@astrojs/cloudflare':
-        specifier: ^12.2.1
-        version: 12.2.1(astro@5.2.6(rollup@4.34.6)(typescript@5.7.3))
+      '@astrojs/rss':
+        specifier: ^4.0.11
+        version: 4.0.11
       astro:
         specifier: ^5.2.6
         version: 5.2.6(rollup@4.34.6)(typescript@5.7.3)
@@ -27,16 +27,8 @@ importers:
 
 packages:
 
-  '@astrojs/cloudflare@12.2.1':
-    resolution: {integrity: sha512-j787lw2iYST66ea/VMrdJ7AGKtgnX4iX2w8Obs4tK88e0K+cwjptq4sTxGXHVd3QWRkBU/XjOquKSRoZskbMnQ==}
-    peerDependencies:
-      astro: ^5.0.0
-
   '@astrojs/compiler@2.10.4':
     resolution: {integrity: sha512-86B3QGagP99MvSNwuJGiYSBHnh8nLvm2Q1IFI15wIUJJsPeQTO3eb2uwBmrqRsXykeR/mBzH8XCgz5AAt1BJrQ==}
-
-  '@astrojs/internal-helpers@0.4.2':
-    resolution: {integrity: sha512-EdDWkC3JJVcpGpqJAU/5hSk2LKXyG3mNGkzGoAuyK+xoPHbaVdSuIWoN1QTnmK3N/gGfaaAfM8gO2KDCAW7S3w==}
 
   '@astrojs/internal-helpers@0.5.1':
     resolution: {integrity: sha512-M7rAge1n2+aOSxNvKUFa0u/KFn0W+sZy7EW91KOSERotm2Ti8qs+1K0xx3zbOxtAVrmJb5/J98eohVvvEqtNkw==}
@@ -48,12 +40,12 @@ packages:
     resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
+  '@astrojs/rss@4.0.11':
+    resolution: {integrity: sha512-3e3H8i6kc97KGnn9iaZBJpIkdoQi8MmR5zH5R+dWsfCM44lLTszOqy1OBfGGxDt56mpQkYVtZJWoxMyWuUZBfw==}
+
   '@astrojs/telemetry@3.2.0':
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
-
-  '@astrojs/underscore-redirects@0.6.0':
-    resolution: {integrity: sha512-dnJgFpaM955IFNIkEEmMaaIdWXRdeZs1ID6mlGBqdjh6NiCXfKmOdq7L4fd9Dd/tr18fkLrOJ25IUJSxRAEhjQ==}
 
   '@babel/helper-string-parser@7.25.9':
     resolution: {integrity: sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==}
@@ -958,6 +950,10 @@ packages:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
 
+  fast-xml-parser@4.5.1:
+    resolution: {integrity: sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==}
+    hasBin: true
+
   fastq@1.19.0:
     resolution: {integrity: sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==}
 
@@ -1001,12 +997,6 @@ packages:
 
   glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
-
-  globalyzer@0.1.0:
-    resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
-
-  globrex@0.1.2:
-    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -1581,11 +1571,11 @@ packages:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
     engines: {node: '>=4'}
 
+  strnum@1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
+
   suf-log@2.5.3:
     resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
-
-  tiny-glob@0.2.9:
-    resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
 
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
@@ -1874,37 +1864,7 @@ packages:
 
 snapshots:
 
-  '@astrojs/cloudflare@12.2.1(astro@5.2.6(rollup@4.34.6)(typescript@5.7.3))':
-    dependencies:
-      '@astrojs/internal-helpers': 0.4.2
-      '@astrojs/underscore-redirects': 0.6.0
-      '@cloudflare/workers-types': 4.20250204.0
-      astro: 5.2.6(rollup@4.34.6)(typescript@5.7.3)
-      esbuild: 0.24.2
-      estree-walker: 3.0.3
-      magic-string: 0.30.17
-      miniflare: 3.20250204.0
-      tiny-glob: 0.2.9
-      vite: 6.1.0
-      wrangler: 3.108.1(@cloudflare/workers-types@4.20250204.0)
-    transitivePeerDependencies:
-      - '@types/node'
-      - bufferutil
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - utf-8-validate
-      - yaml
-
   '@astrojs/compiler@2.10.4': {}
-
-  '@astrojs/internal-helpers@0.4.2': {}
 
   '@astrojs/internal-helpers@0.5.1': {}
 
@@ -1937,6 +1897,11 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
+  '@astrojs/rss@4.0.11':
+    dependencies:
+      fast-xml-parser: 4.5.1
+      kleur: 4.1.5
+
   '@astrojs/telemetry@3.2.0':
     dependencies:
       ci-info: 4.1.0
@@ -1948,8 +1913,6 @@ snapshots:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
-
-  '@astrojs/underscore-redirects@0.6.0': {}
 
   '@babel/helper-string-parser@7.25.9': {}
 
@@ -1983,7 +1946,8 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250204.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20250204.0': {}
+  '@cloudflare/workers-types@4.20250204.0':
+    optional: true
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -2720,6 +2684,10 @@ snapshots:
       merge2: 1.4.1
       micromatch: 4.0.8
 
+  fast-xml-parser@4.5.1:
+    dependencies:
+      strnum: 1.0.5
+
   fastq@1.19.0:
     dependencies:
       reusify: 1.0.4
@@ -2759,10 +2727,6 @@ snapshots:
       is-glob: 4.0.3
 
   glob-to-regexp@0.4.1: {}
-
-  globalyzer@0.1.0: {}
-
-  globrex@0.1.2: {}
 
   graceful-fs@4.2.11: {}
 
@@ -3672,14 +3636,11 @@ snapshots:
 
   strip-bom@3.0.0: {}
 
+  strnum@1.0.5: {}
+
   suf-log@2.5.3:
     dependencies:
       s.color: 0.0.15
-
-  tiny-glob@0.2.9:
-    dependencies:
-      globalyzer: 0.1.0
-      globrex: 0.1.2
 
   tinyexec@0.3.2: {}
 
