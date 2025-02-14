@@ -1,6 +1,7 @@
 ---
+import {getCollection} from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = Object.values(import.meta.glob("./posts/*.md", {eager: true}));
+const allPosts = await getCollection("blog");
 const pageTitle = "My Astro Learning Blog";
 ---
 
@@ -10,7 +11,7 @@ const pageTitle = "My Astro Learning Blog";
 		{
 			allPosts.map((post: any) => (
 				<li>
-					<a href={post.url}>{post.frontmatter.title}</a>
+					<a href={`/posts/${post.id}/`}>{post.data.title}</a>
 				</li>
 			))
 		}

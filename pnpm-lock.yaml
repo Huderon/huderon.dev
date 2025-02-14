@@ -13,10 +13,10 @@ importers:
         version: 4.0.11
       '@astrojs/svelte':
         specifier: ^7.0.4
-        version: 7.0.4(astro@5.2.6(rollup@4.34.6)(typescript@5.7.3))(svelte@5.20.0)(typescript@5.7.3)
+        version: 7.0.4(astro@5.3.0(rollup@4.34.6)(typescript@5.7.3))(svelte@5.20.0)(typescript@5.7.3)
       astro:
-        specifier: ^5.2.6
-        version: 5.2.6(rollup@4.34.6)(typescript@5.7.3)
+        specifier: ^5.3.0
+        version: 5.3.0(rollup@4.34.6)(typescript@5.7.3)
       svelte:
         specifier: ^5.20.0
         version: 5.20.0
@@ -782,8 +782,8 @@ packages:
   as-table@1.0.55:
     resolution: {integrity: sha512-xvsWESUJn0JN421Xb9MQw6AsMHRCUknCe0Wjlxvjud80mU4E6hQf1A6NzQKcYNmYw62MfzEtXc+badstZP3JpQ==}
 
-  astro@5.2.6:
-    resolution: {integrity: sha512-CrTuJMwpWF9kmOhX+cl6uPqNbTRrHO7eXggFP9SK7+Bsen/7FpJtA6k1p/ALleuV5ndJLqn/9tpmP3qACHPjYA==}
+  astro@5.3.0:
+    resolution: {integrity: sha512-e88l/Yk/6enR/ZDddLbqtM+oblBFk5mneNSmNesyVYGL/6Dj4UA67GPAZOk79VxT5dbLlclZSyyw/wlxN1aj3A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2000,10 +2000,10 @@ snapshots:
       fast-xml-parser: 4.5.1
       kleur: 4.1.5
 
-  '@astrojs/svelte@7.0.4(astro@5.2.6(rollup@4.34.6)(typescript@5.7.3))(svelte@5.20.0)(typescript@5.7.3)':
+  '@astrojs/svelte@7.0.4(astro@5.3.0(rollup@4.34.6)(typescript@5.7.3))(svelte@5.20.0)(typescript@5.7.3)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.20.0)(vite@6.1.0)
-      astro: 5.2.6(rollup@4.34.6)(typescript@5.7.3)
+      astro: 5.3.0(rollup@4.34.6)(typescript@5.7.3)
       svelte: 5.20.0
       svelte2tsx: 0.7.34(svelte@5.20.0)(typescript@5.7.3)
       typescript: 5.7.3
@@ -2527,7 +2527,7 @@ snapshots:
     dependencies:
       printable-characters: 1.0.42
 
-  astro@5.2.6(rollup@4.34.6)(typescript@5.7.3):
+  astro@5.3.0(rollup@4.34.6)(typescript@5.7.3):
     dependencies:
       '@astrojs/compiler': 2.10.4
       '@astrojs/internal-helpers': 0.5.1
