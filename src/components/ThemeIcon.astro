@@ -9,13 +9,16 @@ import {Sun, Moon} from "lucide-astro";
 
 <style>
 	#themeToggle {
-		position: relative;
 		border: 0;
 		background: none;
+		display: grid;
+		place-items: center;
+		padding: 4px;
+		cursor: pointer;
 	}
 	.sun,
 	.moon {
-		position: absolute;
+		grid-area: 1 / 1;
 	}
 	:global(.dark) .moon,
 	.sun {
@@ -28,15 +31,16 @@ import {Sun, Moon} from "lucide-astro";
 </style>
 
 <script is:inline>
-	let currentTheme =
-		localStorage.getItem("theme") || window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	let currentTheme = localStorage.getItem("theme");
+	if (!currentTheme) {
+		currentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	}
 
-	document.documentElement.classList.add(currentTheme);
+	document.documentElement.classList.toggle("dark", currentTheme === "dark");
 	localStorage.setItem("theme", currentTheme);
 
 	document.getElementById("themeToggle")?.addEventListener("click", () => {
-		const newTheme = currentTheme === "dark" ? "light" : "dark";
-		document.documentElement.classList.toggle("dark");
-		localStorage.setItem("theme", newTheme);
+		const isDark = document.documentElement.classList.toggle("dark");
+		localStorage.setItem("theme", isDark ? "dark" : "light");
 	});
 </script>
