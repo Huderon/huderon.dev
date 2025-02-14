@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^5.3.0
         version: 5.3.0(rollup@4.34.6)(typescript@5.7.3)
+      lucide-astro:
+        specifier: ^0.473.0
+        version: 0.473.0(astro@5.3.0(rollup@4.34.6)(typescript@5.7.3))
       svelte:
         specifier: ^5.20.0
         version: 5.20.0
@@ -1193,6 +1196,11 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lucide-astro@0.473.0:
+    resolution: {integrity: sha512-MM4P4rwF9Lypb49TQKa3tbuDZqwrL36wI2O5UTJIuH5H+ugSYx9FUxr6j3DqTwxDclHbwX/VBt5f9OXfAE/zRQ==}
+    peerDependencies:
+      astro: '>=2.7.1'
 
   magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
@@ -3075,6 +3083,10 @@ snapshots:
       tslib: 2.8.1
 
   lru-cache@10.4.3: {}
+
+  lucide-astro@0.473.0(astro@5.3.0(rollup@4.34.6)(typescript@5.7.3)):
+    dependencies:
+      astro: 5.3.0(rollup@4.34.6)(typescript@5.7.3)
 
   magic-string@0.25.9:
     dependencies:
