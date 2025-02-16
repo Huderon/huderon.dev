@@ -1,18 +1,11 @@
-html {
-    background-color: #f1f5f9;
-    font-family: sans-serif;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
+    margin: 0;
+    min-height: 100dvh;
     line-height: 1.5;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 :root {
@@ -73,77 +66,23 @@ body {
     --gray2: #9DA9A0;
 }
 
-/* nav styles */
-.hamburger {
-    padding-right: 20px;
-    cursor: pointer;
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/fonts/IBMPlexSans.ttf") format("truetype");
+    font-weight: normal bold;
+    font-style: normal;
+    font-display: swap;
 }
 
-.hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
+html {
+    background-color: var(--bg0);
+    color: var(--fg);
+    font-family: "IBM Plex Sans";
 }
 
-.nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
-    display: none;
-    margin: 0;
-}
-
-.nav-links a {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    background-color: #ff9776;
-}
-
-.expanded {
-    display: unset;
-}
-
-@media screen and (min-width: 636px) {
-    .nav-links {
-        margin-left: 5em;
-        display: block;
-        position: static;
-        width: auto;
-        background: none;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        padding: 15px 20px;
-    }
-
-    .hamburger {
-        display: none;
-    }
-}
-
-html.dark {
-    background-color: #0d0950;
-    color: #fff;
-}
-
-html.light {
-    background-color: red;
-    color: #fff;
-}
-
-.dark .nav-links a {
-    color: #fff;
+main {
+    margin: 0 auto;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
 }

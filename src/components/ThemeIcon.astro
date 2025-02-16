@@ -13,18 +13,22 @@ import {Sun, Moon} from "lucide-astro";
 		background: none;
 		display: grid;
 		place-items: center;
-		padding: 4px;
+		padding: 0.5rem;
 		cursor: pointer;
 	}
 	.sun,
 	.moon {
 		grid-area: 1 / 1;
 	}
-	:global(.dark) .moon,
-	.sun {
+	.sun,
+	:global(.dark) .moon {
 		stroke: var(--fg);
 	}
-	:global(.dark) .sun,
+	button:hover .sun,
+	:global(.dark) button:hover .moon {
+		stroke: var(--statusline1);
+	}
+	:global(.dark) button .sun,
 	.moon {
 		stroke: transparent;
 	}
