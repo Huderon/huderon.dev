@@ -1,0 +1,42 @@
+---
+import {getTagUrl} from "@lib/tags";
+
+export interface Props {
+	tag: string;
+	count?: number;
+	isActive?: boolean;
+	slug?: string;
+}
+
+const {tag, count, isActive, slug} = Astro.props;
+const href = getTagUrl(tag, slug);
+---
+
+<a href={href} class:list={["tag", {active: isActive}]} aria-current={isActive ? "true" : undefined}>
+	{tag}
+	{count && <span class="count">({count})</span>}
+</a>
+
+<style>
+	.tag {
+		display: inline-block;
+		padding: 0.4rem 0.8rem;
+		background-color: var(--bg3);
+		text-decoration: none;
+		color: var(--fg);
+	}
+
+	.tag:hover {
+		background-color: var(--bg4);
+		color: var(--statusline1);
+	}
+
+	.tag.active {
+		color: var(--statusline1);
+	}
+
+	.count {
+		font-size: 0.8rem;
+		color: var(--gray1);
+	}
+</style>

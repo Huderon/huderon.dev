@@ -1,0 +1,67 @@
+---
+import {getSelectedTags} from "@lib/tags";
+import Tag from "./Tag.astro";
+
+interface Props {
+	filteredTagCounts?: Record<string, number>;
+	tagCounts: Record<string, number>;
+	slug?: string;
+}
+
+const {filteredTagCounts, tagCounts, slug} = Astro.props;
+const selectedTags = getSelectedTags(slug);
+const countsToUse = filteredTagCounts || tagCounts;
+const selectedTagsWithCounts = selectedTags.map((tag) => ({
+	tag,
+	count: countsToUse[tag] || 0,
+}));
+const unselectedTags = Object.entries(countsToUse)
+	.filter(([tag, count]) => !selectedTags.includes(tag) && count > 0)
+	.sort(([, a], [, b]) => b - a);
+---
+
+<div class="tags-container">
+	{
+		selectedTags.length > 0 && (
+			<div class="selected-tags">
+				<span>Filtering by:</span>
+				{selectedTagsWithCounts.map(({tag, count}) => (
+					<Tag tag={tag} count={count} isActive={true} slug={slug} />
+				))}
+				<a href="/blog" class="clear-tags">
+					Clear all
+				</a>
+			</div>
+		)
+	}
+
+	<div class="tags">
+		{unselectedTags.map(([tag, count]) => <Tag tag={tag} count={count} isActive={false} slug={slug} />)}
+	</div>
+</div>
+
+<style>
+	.tags-container {
+		background-color: var(--bg_dim);
+		padding: 1rem;
+		margin: 1rem 0;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.selected-tags {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.clear-tags {
+		color: var(--red);
+	}
+</style>

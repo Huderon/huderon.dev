@@ -1,12 +1,30 @@
 ---
-const currentPath = Astro.url.pathname;
+interface NavLink {
+	href: string;
+	label: string;
+	isActive: (path: string) => boolean;
+}
+
+const currentPath: string = Astro.url.pathname;
+
+const links: NavLink[] = [
+	{href: "/", label: "Home", isActive: (path) => path === "/"},
+	{href: "/about", label: "About", isActive: (path) => path === "/about"},
+	{href: "/blog", label: "Blog", isActive: (path) => path.startsWith("/blog")},
+];
 ---
 
 <div class="nav-links">
-	<a href="/" data-active={currentPath === "/"}>Home</a>
-	<a href="/about" data-active={currentPath === "/about"}>About</a>
-	<a href="/blog" data-active={currentPath === "/blog"}>Blog</a>
-	<a href="/blog/tags" data-active={currentPath === "/tags"}>Tags</a>
+	{
+		links.map(({href, label, isActive}) => (
+			<a
+				href={href}
+				class:list={["nav-link", {active: isActive(currentPath)}]}
+				aria-current={isActive(currentPath)}>
+				{label}
+			</a>
+		))
+	}
 </div>
 
 <style>
@@ -15,7 +33,7 @@ const currentPath = Astro.url.pathname;
 		flex-wrap: wrap;
 	}
 
-	.nav-links a {
+	.nav-link {
 		display: inline-block;
 		padding: 1rem 0.5rem;
 		text-align: center;
@@ -26,9 +44,9 @@ const currentPath = Astro.url.pathname;
 		border-color: transparent;
 	}
 
-	.nav-links a:hover,
-	.nav-links a:focus,
-	.nav-links a[data-active="true"] {
+	.nav-link:hover,
+	.nav-link:focus,
+	.nav-link.active {
 		border-bottom-color: var(--statusline1);
 	}
 </style>

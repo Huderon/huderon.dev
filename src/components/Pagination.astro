@@ -1,0 +1,84 @@
+---
+import {ChevronFirst, ChevronLast, ChevronLeft, ChevronRight} from "lucide-astro";
+import type {CollectionEntry} from "astro:content";
+import type {Page} from "astro";
+
+export interface Props {
+	page: Page<CollectionEntry<"blog">>;
+	basePath: string;
+}
+
+const {page, basePath} = Astro.props;
+
+const createPaginationArray = (currentPage: number, lastPage: number) => {
+	const halfDisplay = Math.floor(5 / 2);
+
+	let startPage = Math.max(1, currentPage - halfDisplay);
+
+	if (startPage > lastPage - 5 + 1) {
+		startPage = Math.max(1, lastPage - 5 + 1);
+	}
+
+	const length = Math.min(5, lastPage);
+
+	return [...Array(length)].map((_, i) => startPage + i);
+};
+
+const paginationList = createPaginationArray(page.currentPage, page.lastPage);
+---
+
+<nav aria-label="Blog pages" class="pagination pagination-default">
+	<a href={page.url.first} class:list={["pagination-link", "icon", {disabled: !page.url.prev}]}>
+		<ChevronFirst />
+	</a>
+	<a href={page.url.prev} class:list={["pagination-link", "icon", {disabled: !page.url.prev}]}>
+		<ChevronLeft />
+	</a>
+
+	{
+		paginationList.map((pageNumber) => (
+			<a
+				href={pageNumber === 1 ? basePath : `${basePath}/${pageNumber}`}
+				class:list={["pagination-link", "page-number", {active: page.currentPage === pageNumber}]}
+				aria-current={page.currentPage == pageNumber ? "true" : undefined}>
+				{pageNumber}
+			</a>
+		))
+	}
+	<a href={page.url.next} class:list={["pagination-link", "icon", {disabled: !page.url.next}]}>
+		<ChevronRight />
+	</a>
+	<a href={page.url.last} class:list={["pagination-link", "icon", {disabled: !page.url.last}]}>
+		<ChevronLast />
+	</a>
+</nav>
+
+<style>
+	.pagination {
+		display: flex;
+		gap: 0.5rem;
+		text-align: center;
+		justify-content: center;
+		font-size: 1.5rem;
+	}
+
+	.pagination-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.pagination-link.icon {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.pagination-link:hover,
+	.pagination-link.active {
+		color: var(--statusline1);
+	}
+
+	.pagination-link.disabled {
+		pointer-events: none;
+		color: var(--gray1);
+	}
+</style>

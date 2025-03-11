@@ -1,0 +1,30 @@
+---
+import type {CollectionEntry} from "astro:content";
+import PostSummary from "./PostSummary.astro";
+
+interface Props {
+	posts: CollectionEntry<"blog">[];
+}
+
+const {posts} = Astro.props;
+---
+
+<div class="post-grid">
+	{posts.map((post) => <PostSummary post={post} />)}
+</div>
+
+<style>
+	.post-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-auto-rows: 1fr;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	@media (max-width: 640px) {
+		.post-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

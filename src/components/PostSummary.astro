@@ -1,0 +1,80 @@
+---
+import type {CollectionEntry} from "astro:content";
+
+export interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const {post} = Astro.props;
+---
+
+<div class="card">
+	<div class="summary">
+		<a href={`/blog/posts/${post.id}/`}>
+			<figure>
+				<img src={post.data.image.url} alt={post.data.image.alt} />
+			</figure>
+		</a>
+		<a href={`/blog/posts/${post.id}/`}>
+			<h3>{post.data.title}</h3>
+		</a>
+		<p class="description">{post.data.description}</p>
+		<time datetime={post.data.pubDate.toISOString()}>
+			{post.data.pubDate.toLocaleDateString()}
+		</time>
+	</div>
+
+	<style>
+		.card {
+			overflow: hidden;
+			background-color: var(--bg3);
+		}
+
+		.card:hover {
+			background-color: var(--bg4);
+		}
+
+		.summary {
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 0;
+			overflow: hidden;
+			max-height: 200px;
+		}
+
+		img {
+			width: 100%;
+			aspect-ratio: 16/9;
+			height: auto;
+			object-fit: cover;
+		}
+
+		h3 {
+			margin: 0.5rem 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.description {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			line-height: 1.5rem;
+			min-height: 1.5rem;
+		}
+
+		time {
+			display: block;
+			font-size: 0.8rem;
+			color: var(--gray1);
+			margin-top: 0.5rem;
+		}
+	</style>
+</div>
