@@ -65,11 +65,4 @@ import {Sun, Moon} from "lucide-astro";
 		localStorage.setItem("theme", newTheme);
 		updateGiscusTheme(newTheme);
 	});
-
-	window.addEventListener("message", function (event) {
-		if (event.origin !== "https://giscus.app") return;
-		if (event.data?.giscus?.discussion?.initial) {
-			updateGiscusTheme(localStorage.getItem("theme") || currentTheme);
-		}
-	});
 </script>
