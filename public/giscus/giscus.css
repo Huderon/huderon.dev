@@ -1,3 +1,86 @@
 *, ::after, ::before {
      border: unset;
 }
+
+:root {
+     --bg_dim: #232A2E;
+     --bg0: #2D353B;
+     --bg1: #343F44;
+     --bg2: #3D484D;
+     --bg3: #475258;
+     --bg4: #4F585E;
+     --bg5: #56635F;
+     --bg_red: #543A48;
+     --bg_visual: #514045;
+     --bg_yellow: #4D4C43;
+     --bg_green: #425047;
+     --bg_blue: #3A515D;
+     --red: #E67E80;
+     --orange: #E69875;
+     --yellow: #DBBC7F;
+     --green: #A7C080;
+     --blue: #7FBBB3;
+     --aqua: #83C092;
+     --purple: #D699B6;
+     --fg: #D3C6AA;
+     --statusline1: #A7C080;
+     --statusline2: #D3C6AA;
+     --statusline3: #E67E80;
+     --gray0: #7A8478;
+     --gray1: #859289;
+     --gray2: #9DA9A0;
+}
+
+.color-bg-default, .color-bg-primary {
+     background-color: var(--bg2);
+}
+
+.color-border-primary {
+     border-color: var(--bg_dim);
+}
+
+.color-bg-overlay {
+     background-color: var(--bg_dim);
+}
+
+
+.color-bg-tertiary, .input-contrast {
+     background-color: var(--bg1);
+}
+
+.color-fg-default, .color-text-primary, .link-primary {
+     color: var(--fg);
+}
+
+.color-fg-muted, .color-text-secondary, .link-secondary {
+     color: var(--gray1);
+}
+
+.gsc-reactions-popover.open.bottom::before {
+     border-bottom-color: var(--bg_dim);
+}
+
+.gsc-toolbar-item:hover, .gsc-toolbar-item[title^="Disable"] {
+     color: var(--statusline1);
+}
+
+.gsc-comment-box:not(.gsc-comment-box-is-reply), .gsc-comment-box-write, .gsc-comment-box-tabs, .gsc-comment-box-textarea, .gsc-comment-box-textarea-extras {
+     border-radius: unset;
+}
+
+.gsc-comment-box-tabs button {
+     border-bottom: solid 3px transparent !important;
+}
+
+.gsc-comment-box-tabs button.color-border-primary {
+     border-color: var(--statusline1) !important;
+}
+
+.gsc-comment-box-textarea {
+     border-color: var(--gray1);
+}
+
+.gsc-comment-box-buttons > a:hover {
+     color: var(--statusline1)
+
+}
