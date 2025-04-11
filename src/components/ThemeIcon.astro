@@ -43,16 +43,10 @@ import {Sun, Moon} from "lucide-astro";
 	document.documentElement.classList.toggle("dark", currentTheme === "dark");
 	localStorage.setItem("theme", currentTheme);
 
-	const giscusIframe = document.querySelector("iframe.giscus-frame");
-	if (giscusIframe) {
-		giscusIframe.onload = () => {
-			updateGiscusTheme(currentTheme);
-		};
-	}
-
 	function updateGiscusTheme(theme) {
-		if (giscusIframe) {
-			giscusIframe.contentWindow.postMessage(
+		const iframe = document.querySelector("iframe.giscus-frame");
+		if (iframe) {
+			iframe.contentWindow.postMessage(
 				{
 					giscus: {
 						setConfig: {
