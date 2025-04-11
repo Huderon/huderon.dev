@@ -41,13 +41,18 @@ import {Sun, Moon} from "lucide-astro";
 	}
 
 	document.documentElement.classList.toggle("dark", currentTheme === "dark");
-	updateGiscusTheme(currentTheme);
 	localStorage.setItem("theme", currentTheme);
 
+	const giscusIframe = document.querySelector("iframe.giscus-frame");
+	if (giscusIframe) {
+		giscusIframe.onload = () => {
+			updateGiscusTheme(currentTheme);
+		};
+	}
+
 	function updateGiscusTheme(theme) {
-		const iframe = document.querySelector("iframe.giscus-frame");
-		if (iframe) {
-			iframe.contentWindow.postMessage(
+		if (giscusIframe) {
+			giscusIframe.contentWindow.postMessage(
 				{
 					giscus: {
 						setConfig: {
