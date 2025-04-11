@@ -1,5 +1,5 @@
 ---
-const initialTheme = "light";
+
 ---
 
 <script is:inline>
@@ -15,7 +15,7 @@ const initialTheme = "light";
 			"data-reactions-enabled": "1",
 			"data-emit-metadata": "0",
 			"data-input-position": "top",
-			"data-theme": `${Astro.url.origin}/giscus/${localStorage.getItem("theme")}.css`,
+			"data-theme": `${new URL(document.URL).origin}/giscus/${localStorage.getItem("theme")}.css`,
 			"data-lang": "en",
 			"data-loading": "lazy",
 			"crossorigin": "anonymous",
