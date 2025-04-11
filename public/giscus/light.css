@@ -1,0 +1,104 @@
+*,
+::after,
+::before {
+    border: unset;
+}
+:root {
+    --bg_dim: #EFEBD4;
+    --bg0: #FDF6E3;
+    --bg1: #F4F0D9;
+    --bg2: #EFEBD4;
+    --bg3: #E6E2CC;
+    --bg4: #E0DCC7;
+    --bg5: #BDC3AF;
+    --bg_red: #FBE3DA;
+    --bg_visual: #EAEDC8;
+    --bg_yellow: #FAEDCD;
+    --bg_green: #F0F1D2;
+    --bg_blue: #E9F0E9;
+    --red: #F85552;
+    --orange: #F57D26;
+    --yellow: #DFA000;
+    --green: #8DA101;
+    --blue: #3A94C5;
+    --aqua: #35A77C;
+    --purple: #DF69BA;
+    --fg: #5C6A72;
+    --statusline1: #93B259;
+    --statusline2: #708089;
+    --statusline3: #E66868;
+    --gray0: #A6B0A0;
+    --gray1: #939F91;
+    --gray2: #829181;
+}
+.color-bg-default,
+.color-bg-primary,
+.gsc-reactions > div {
+    background-color: var(--bg2);
+}
+.color-border-primary {
+    border-color: var(--bg_dim);
+}
+.color-bg-overlay {
+    background-color: var(--bg_dim);
+}
+.color-bg-tertiary,
+.gsc-reactions,
+.input-contrast,
+.input-contrast:focus {
+    background-color: var(--bg1);
+}
+.color-fg-default,
+.color-text-primary,
+.link-primary {
+    color: var(--fg);
+}
+.color-fg-muted,
+.color-text-secondary,
+.link-secondary {
+    color: var(--gray1);
+}
+.BtnGroup-item.BtnGroup-item--selected,
+.BtnGroup-item:hover,
+.gsc-comment-box-buttons > a:hover,
+.gsc-comment-box-buttons > button:hover,
+.gsc-toolbar-item:hover,
+.gsc-toolbar-item[title^="Disable"] {
+    color: var(--statusline1);
+}
+.gsc-reactions-popover.open.bottom::before {
+    border-bottom-color: var(--bg_dim) !important;
+}
+.gsc-reactions-popover.open.top::before {
+    border-top-color: var(--bg_dim);
+}
+#__next .rounded-md,
+.gsc-comment-box-tabs,
+.gsc-comment-box-textarea,
+.gsc-comment-box-textarea-extras,
+.gsc-comment-box-write,
+.gsc-comment-box:not(.gsc-comment-box-is-reply) {
+    border-radius: unset;
+}
+.gsc-comment-box-tabs button {
+    border-bottom: 3px solid transparent !important;
+}
+.gsc-comment-box-tabs button.color-border-primary {
+    border-color: var(--statusline1) !important;
+}
+.gsc-comment-box-textarea {
+    border-color: var(--gray1);
+}
+.gsc-comment-box-bottom > button:hover {
+    color: var(--statusline3);
+}
+.gsc-social-reaction-summary-item.has-reacted {
+    background-color: var(--bg3);
+    border-radius: unset;
+}
+.gsc-social-reaction-summary-item.has-reacted:hover:enabled {
+    background-color: var(--bg4);
+}
+.gsc-reactions > div {
+    padding: 0.5rem;
+}
