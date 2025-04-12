@@ -133,7 +133,10 @@
     padding: 0.5rem;
 }
 .markdown .highlight pre,
-.markdown pre {
+.markdown pre,
+.markdown code:not(pre > code),
+.markdown tt {
     background-color: var(--bg1);
     border-radius: unset;
 }
+
