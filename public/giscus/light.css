@@ -30,6 +30,36 @@
     --gray0: #A6B0A0;
     --gray1: #939F91;
     --gray2: #829181;
+    --color-prettylights-syntax-comment: var(--gray1);
+    --color-prettylights-syntax-constant: var(--aqua);
+    --color-prettylights-syntax-entity: var(--purple);
+    --color-prettylights-syntax-storage-modifier-import: var(--fg);
+    --color-prettylights-syntax-entity-tag: var(--green);
+    --color-prettylights-syntax-keyword: var(--red);
+    --color-prettylights-syntax-string: var(--green);
+    --color-prettylights-syntax-variable: var(--orange);
+    --color-prettylights-syntax-brackethighlighter-unmatched: var(--red);
+    --color-prettylights-syntax-invalid-illegal-text: var(--fg);
+    --color-prettylights-syntax-invalid-illegal-bg: var(--bg_red);
+    --color-prettylights-syntax-carriage-return-text: var(--fg);
+    --color-prettylights-syntax-carriage-return-bg: var(--bg_red);
+    --color-prettylights-syntax-string-regexp: var(--green);
+    --color-prettylights-syntax-markup-list: var(--yellow);
+    --color-prettylights-syntax-markup-heading: var(--blue);
+    --color-prettylights-syntax-markup-italic: var(--fg);
+    --color-prettylights-syntax-markup-bold: var(--fg);
+    --color-prettylights-syntax-markup-deleted-text: var(--red);
+    --color-prettylights-syntax-markup-deleted-bg: var(--bg_red);
+    --color-prettylights-syntax-markup-inserted-text: var(--green);
+    --color-prettylights-syntax-markup-inserted-bg: var(--bg_green);
+    --color-prettylights-syntax-markup-changed-text: var(--yellow);
+    --color-prettylights-syntax-markup-changed-bg: var(--bg_yellow);
+    --color-prettylights-syntax-markup-ignored-text: var(--fg);
+    --color-prettylights-syntax-markup-ignored-bg: var(--bg_blue);
+    --color-prettylights-syntax-meta-diff-range: var(--purple);
+    --color-prettylights-syntax-brackethighlighter-angle: var(--gray1);
+    --color-prettylights-syntax-sublimelinter-gutter-mark: var(--bg4);
+    --color-prettylights-syntax-constant-other-reference-link: var(--blue);
 }
 .color-bg-default,
 .color-bg-primary,
@@ -101,4 +131,9 @@
 }
 .gsc-reactions > div {
     padding: 0.5rem;
+}
+.markdown .highlight pre,
+.markdown pre {
+    background-color: var(--bg1);
+    border-radius: unset;
 }
